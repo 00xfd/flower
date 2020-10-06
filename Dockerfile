@@ -4,6 +4,7 @@ FROM python:alpine
 RUN apk add --no-cache ca-certificates && update-ca-certificates
 
 # Install the required packages
+RUN pip install celery==4.4.7
 RUN pip install --no-cache-dir redis flower
 
 # PYTHONUNBUFFERED: Force stdin, stdout and stderr to be totally unbuffered. (equivalent to `python -u`)
